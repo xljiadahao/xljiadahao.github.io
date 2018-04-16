@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Internet|Software|Banking|Security, Java Latest Features, Spring Suite, Cryptography, Payments...">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Xu Lei&#39;s Techblog">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Xu Lei&#39;s Techblog">
+<meta property="og:description" content="Internet|Software|Banking|Security, Java Latest Features, Spring Suite, Cryptography, Payments...">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Xu Lei&#39;s Techblog">
+<meta name="twitter:description" content="Internet|Software|Banking|Security, Java Latest Features, Spring Suite, Cryptography, Payments...">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/"/>
+
+
+
+
+
+  <title>Xu Lei's Techblog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+    <a href="https://github.com/xljiadahao/Snippets.git"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Xu Lei's Techblog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">徐磊的技术博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-payment">
+          <a href="/payment" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-paypal"></i> <br />
+            
+            支付Payment
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/15/Xu-Lei-Showcase-Super-App-Seamless-Payment-Framework-Prototype/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xu Lei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/7018287">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xu Lei's Techblog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/15/Xu-Lei-Showcase-Super-App-Seamless-Payment-Framework-Prototype/" itemprop="url">Xu Lei Showcase - Seamless Super App Prototype</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-15T00:00:00+08:00">
+                2018-04-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Note: The size of the demo video is about 100MB, so it could be better to watch it in the <code>Wi-Fi</code> network environment. The demo video is tested against the Chrome and Firefox browers in Mac. You can stop to watch it by operating the video control panel. Demo steps: 1. Scan McDonald’s QR code for seamless payment, 2. Scan Pizza Hut QR code for seamless payment.</p>
+<table><tr><td height="510"><video src="/videos/superapp/ayPalQR_PizH.mov" width="100%" height="100%" poster="/images/superapp/poster.jpg" autoplay="autoplay" controls="controls">Your browser or system may not support the media. Please use latest version of Chrome or Firefox in Mac.</video></td><td height="510"><video src="/videos/superapp/PayPalQR_PizH.mov" width="100%" height="100%" poster="/images/superapp/poster.jpg" autoplay="autoplay" controls="controls">Your browser or system may not support the media. Please use latest version of Chrome or Firefox in Mac.</video></td></tr></table>
+
+<p>##Concept<br><code>Super App</code><br>Super App means opening for Integration, Integration and Integration!!!<br>(Refer to WeChat Little Program concept) The future apps allow users <code>Use and Leave</code> without downloading.<br><code>Seamless Authentication User Experience</code><br>Seamless Login for the Authenticated User. For example, the users logged in their mobile app, they can use the system anywhere such as mobile, web app at laptop, and so forth.<br>Blur the lines of payment between online and offline.<br>Blur the lines between different systems.</p>
+<p>##Design<br><img src="/images/superapp/logic_view.png" alt="logic view" title="logic view"><br><img src="/images/superapp/physical_view.png" alt="physical view" title="physical view"></p>
+<p>##Security</p>
+<table><tr><th width="25%" bgcolor="grey">Security Concern</th><th bgcolor="grey">Security Challenge</th><th bgcolor="grey">Solution</th></tr><tr><td bgcolor="#eeeeee"> QR Code </td><td> The QR code is able to contain any information, valid or invalid. It will be risky to redirect user to the invalid site. </td><td> <code>Tokenized QR Code</code> signed by the payment gateway (here is JWT, Json Web Token). <code>HMAC</code> digital signature within the token ensures token can be verified by issuer only, and no one is able to change the token information as only the payment gateway hold the HMAC signature key. </td></tr><tr><td bgcolor="#eeeeee"> Payment Process </td><td> Merchants should not play the role to conduct the payment process. For example, user buy $10 product, merchant might internally ask the payment gateway to charge the user $100 intently or by mistake. </td><td> Merchant site <code>natively direct the payment process to the payment gateway mobile app to allow users confirm the payment within the payment app</code>. (Android prototype tech challenge: child thread call redirect to main thread). User is able to make a final verification of their payment detail before clicking the pay button. Payment gateway will fully control the payment process securely. </td></tr><tr><td bgcolor="#eeeeee"> Payment Status Notification </td><td> For the merchant perspective, it’s not secure to allow any client to notify and change the payment status. </td><td> By design, the merchant portal just allows payment gateway as the payment authority to notify the payment result. Merchant will generate the receipt based on the payment status for the specific order. </td></tr></table>
+
+<p>##Extension<br>a. Seamless authentication. I am an authenticated user at the mobile app. I should be able to seamlessly get authenticated at my iPad app, Desktop Web System wherever I am required to be authenticated. SSO, single sign on, to be the legal entity in the system cross platforms, QR code can bridge the gap.<br>b. Seamless authorization with payment. Merchants generate the bill online and users just need to open the payment app, Scan the QR code on the web page and Pay.  Blur the lines between the payment gateway and the merchant site. Username and Password are old days for authorization and authentication. Inconvenient and high risk to enter the credential through merchant site due to phishing sites.<br>c. Order ahead. For those used merchant tokens, they can be stored as the history or shortcut for the next time order ahead capability.<br>d. Default integration with verified government sites. User can easily pay for their tax, water bill, phone bill, and so forth. Scenario payment to change user’s daily lives, and increase DAU (Daily Active User).<br>e. Integration with loyalty systems, restaurant bookings, advance paying for carpark to reserve it before you reaching the place, paying for season parking, etc.</p>
+<h4 id="Upcoming-topics-RX-Java-Cryptography-101"><a href="#Upcoming-topics-RX-Java-Cryptography-101" class="headerlink" title="Upcoming topics: RX Java, Cryptography 101"></a>Upcoming topics: RX Java, Cryptography 101</h4>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/12/Json-Web-Token-JWT/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xu Lei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/7018287">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xu Lei's Techblog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/12/Json-Web-Token-JWT/" itemprop="url">Json Web Token (JWT)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-12T00:00:00+08:00">
+                2018-03-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Json Web Token (JWT) plays a signifiant role as the secure identity, especially in the distributed architecure such as SOA (Service Oriented Architecture) systems. Here I would like to introduce JWT by the following steps. 1. Brief introduction of JWT, 2. Benefit of JWT, 3. Sample implementation to use JWT in Java.</p>
+<p>a. <code>Brief introduction of JWT</code><br>I would like to introduce JWT briefly. JWT is a secure information transmitting way based on the open standard (RFC 7519) by a json object. It contains 3 parts, Header, Payload, Signature seperated by dots (.). Therefore, a typical JWT token looks like the following format. <code>Header.Payload.Signature</code>. Let’s break down to get the details of each part.<br>Header<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;alg&quot;: &quot;HS256&quot;,</span><br><span class="line">  &quot;typ&quot;: &quot;JWT&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>The header generally consists of two parts: the type of the token, and the hashing algorithm being used. Then it will be getting base64 encoded to form the header part of the JWT.<br>Note: <code>Encoding is the public known way to tranfer the data from one format to another format.</code> Therefore, the header is getting base64 encoded, which means the header part of JWT can be considered as the <code>plain text</code>. Thus, we should NOT store the sensitive information in the JWT header.<br>Payload<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;sub&quot;: &quot;third party authorization&quot;,</span><br><span class="line">  &quot;iss&quot;: &quot;auth0&quot;,</span><br><span class="line">  &quot;exp&quot;: &quot;1520239160663&quot;</span><br><span class="line">  &quot;customclaims&quot;: </span><br><span class="line">  &#123;</span><br><span class="line">    &quot;id&quot;: 33,</span><br><span class="line">    &quot;userName&quot;: &quot;lei&quot;,</span><br><span class="line">    &quot;role&quot;: </span><br><span class="line">    &#123;</span><br><span class="line">      &quot;roleName&quot;: &quot;admin&quot;,</span><br><span class="line">      &quot;privileges&quot;: [&quot;read&quot;, &quot;write&quot;, &quot;delete&quot;]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Payload contains three types of claims: registered, public, and private claims. They are statements about an entity. Registered claims are a set of predefined claims with three characters claim name such as iss (issuer), exp (expiration time), sub (subject), aud (audience). Public claims can be defined at will by those using JWTs. Private claims are the custom claims for information sharing between parties like “customclaims” in the sample above. Then it will be getting base64 encoded to form the payload part of the JWT.<br>Note: Similar to JWT header, the payload is getting base64 encoded, which means the payload part of JWT can be considered as the <code>plain text</code>. Thus, we should NOT store the sensitive information in the JWT payload.<br>Signature<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">HMACSHA256(</span><br><span class="line">  base64UrlEncode(header) + &quot;.&quot; +</span><br><span class="line">  base64UrlEncode(payload),</span><br><span class="line">  secret)</span><br></pre></td></tr></table></figure></p>
+<p>Use the algorithm specified in the header to sign the encoded header, the encoded payload with a secret. The signature is used to verify the message wasn’t changed along the way. In the sample, we use HMAC SHA256 algorithm.<br>Note: <code>Signature typically takes use of hash function which is one way encryption.</code> It cannot be reverted back to get the secret by the signature. Any information in the token is getting changed, then it will result in generating different signature for the failed verification. Thus, the <code>secret</code> is very important for the verification, and it will be stored in the <code>server side</code> only securely. <code>During verification, the server will re-caculate the singature by first two parts of the JWT, the base64 encoded header and the base64 encoded payload, with the secret which is only known by the server, then compare the re-caculated signature with the sigature of the JWT</code>.<br>Json Web Token (JWT)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhdXRoMCIsInN1YiI6InRoaXJkIHBhcnR5IGF1dGhvcml6YXRpb24iLCJjdXN0b21jbGFpbXMiOiJ7XCJpZFwiOjMzLFwidXNlck5hbWVcIjpcImxlaVwiLFwicm9sZVwiOntcInJvbGVOYW1lXCI6XCJhZG1pblwiLFwicHJpdmlsZWdlc1wiOltcInJlYWRcIixcIndyaXRlXCIsXCJkZWxldGVcIl19fSIsImV4cCI6MTUyMDcxNTcwODAzOH0.om5ZNtXDtsp6IUOErHcrE1kykiNEebjA55QCmxdWxnk</span><br></pre></td></tr></table></figure></p>
+<p>Therefore, the JWT like the sample above is the combination of the base64 encoded header, the base64 encoded payload, and the signiture signed with a secret.<br>Again, do note that with signed tokens, all the information contained within the token is exposed to users or other parties, even though they are unable to change it. This means you should not put secret information within the token.<br>As the general flow to use the JWT token, the user will login with the credential to get a JWT token, then the user can take use of the JWT token to access the protected resources. To find out more information about Json Web Token (JWT) or try out JWT token generation, decoding and verification online, browse the <a href="https://jwt.io/" target="_blank" rel="noopener">jwt.io</a> website.</p>
+<p>b. <code>Benefit of JWT</code><br>1 High efficiency. The server do not need to have the database access for authentication, and instead, it just need to re-caculate the signature in memory for verification.<br>2 Cross-Origin Resource Sharing. JWT token provides the stateless way for authentication, so it could not be an issue to access the resources cross multiple services as it doesn’t use cookie and session, especially for the distributed architecture systems.<br>3 Light weight. JWT is a light weight format transmitting way between parties by the http request (mostly in the http header). It can exchange the necessary information within the JWT payload.</p>
+<p>c <code>Sample implementation to use JWT in Java</code><br>Here we use auth0 library for the implementation.<br>pom.xml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;com.auth0&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;java-jwt&lt;/artifactId&gt;</span><br><span class="line">	&lt;version&gt;2.2.1&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure></p>
+<p>Signing with a secret, return the JWT token as a String<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public static&lt;T&gt; String sign(T object, long maxAge) throws Exception &#123;</span><br><span class="line">    final JWTSigner signer = new JWTSigner(SECRET);</span><br><span class="line">    final Map&lt;String, Object&gt; claims = new HashMap&lt;String, Object&gt;();</span><br><span class="line">    ObjectMapper mapper = new ObjectMapper();</span><br><span class="line">    String jsonString = mapper.writeValueAsString(object);</span><br><span class="line">    claims.put(CUSTOM_CLAIMS, jsonString);</span><br><span class="line">    claims.put(EXPIRATION_TIME, System.currentTimeMillis() + maxAge);</span><br><span class="line">    claims.put(ISSUER, &quot;auth0&quot;);</span><br><span class="line">    claims.put(SUBJECT, &quot;third party authorization&quot;);</span><br><span class="line">    return signer.sign(claims);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Unsigning with the same secret by signature verification<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public static&lt;T&gt; T unsign(String jwt, Class&lt;T&gt; classT) throws Exception &#123;</span><br><span class="line">    final JWTVerifier verifier = new JWTVerifier(SECRET);</span><br><span class="line">    final Map&lt;String,Object&gt; claims= verifier.verify(jwt);</span><br><span class="line">    if (claims.containsKey(EXPIRATION_TIME) &amp;&amp; claims.containsKey(ISSUER) </span><br><span class="line">            &amp;&amp; claims.containsKey(SUBJECT) &amp;&amp; claims.containsKey(CUSTOM_CLAIMS)) &#123;</span><br><span class="line">        long exp = (long) claims.get(EXPIRATION_TIME);</span><br><span class="line">        System.out.println(&quot;EXPIRATION_TIME: &quot; + sdf.format(new Date(exp)) + &quot;, ISSUER: &quot; </span><br><span class="line">                + (String) claims.get(ISSUER) + &quot;, SUBJECT: &quot; + (String) claims.get(SUBJECT));</span><br><span class="line">        if (exp &gt; System.currentTimeMillis()) &#123;</span><br><span class="line">            String privateClaims = (String) claims.get(CUSTOM_CLAIMS);</span><br><span class="line">            ObjectMapper objectMapper = new ObjectMapper();</span><br><span class="line">            return objectMapper.readValue(privateClaims, classT);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return null;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Find more about the code snippets of JWT under the package <em>com.snippet.jwt</em> of the Snippet repository in <a href="https://github.com/xljiadahao/SnippetInnovationWithSpringBoot.git" target="_blank" rel="noopener">GitHub</a>.</p>
+<p>The code snippets demo for the JWT token generation and verification.</p>
+<p>1 login to get the JWT token within hateoas link<br><img src="/images/jwt/jwt_login_request.png" alt="request of token generation" title="request for token generation"><br><img src="/images/jwt/jwt_login_response.png" alt="response of token generation" title="response of token generation"><br>2 verify the token by getting the user information<br><img src="/images/jwt/jwt_verify_request_response.png" alt="token verification" title="token verification"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/04/Java-8-Features/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xu Lei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/7018287">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xu Lei's Techblog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/04/Java-8-Features/" itemprop="url">Java 8 Features</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-04T00:00:00+08:00">
+                2018-02-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>I would like to introduce the Java 8 features in a systematic way. Basically, Java 8 introduces the following new features. 1. functional interface, 2. lambda expression, 3. 6 types of pre-defined functional interface in Java 8, 4. stream API, 5. default method, 6. effective final, 7. method reference.</p>
+<p>a. <code>Functional Interface</code><br>Functional Interface is a single abstract method interface.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@FunctionalInterface</span><br><span class="line">public interface Payment &#123;</span><br><span class="line">    public void pay(ShoppingCart shoppingCart, </span><br><span class="line">    		Predicate&lt;Integer&gt; isReceiptRequired);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>The annotation <em>FunctionalInterface</em> checks against the class to comply with the rule of functional interface that it is a single abstract method interface. If we introduce another abstract method in the class, there will be compile error.</p>
+<p>b. <code>Lambda Expression</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public void checkout() &#123;</span><br><span class="line">    Payment cashPay = (ShoppingCart shoppingCart, </span><br><span class="line">			Predicate&lt;Integer&gt; isReceiptRequired) -&gt; &#123;</span><br><span class="line">        System.out.println(&quot;Cash is NOT support&quot;);</span><br><span class="line">    &#125;;</span><br><span class="line">    cashPay.pay(getShoppingCart(), (Integer amount) -&gt; false);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Lambda Expression can be only used for Functional Interface. It uses the syntax <em>-&gt;</em> to indicate the method body of the single abstract method interface. The left side of <em>-&gt;</em> is the method parameters, and the right side of <em>-&gt;</em> is the method implementation.</p>
+<p>c. <code>6 Types of Functional Interface in Java 8</code><br>They are all under the package <em>java.util.function</em>.<br>A. <em>Predicate, (I) -&gt; boolean, replace if else</em><br>B. <em>Function, (I) -&gt; R, transformer, one type to another type</em><br>C. <em>Consumer, (I) -&gt; void, consumer the input data</em><br>D. <em>Supplier, () -&gt; new (), factory pattern</em><br>E. <em>BinaryOperator, (I, I) -&gt; I, reducers, accumulation</em><br>F. <em>UnaryOperator, (I) -&gt; I</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public default Optional&lt;Integer&gt; calculateTotalAmount(ShoppingCart shoppingCart) &#123;</span><br><span class="line">    Predicate&lt;Product&gt; filterCondition = (Product p) -&gt; </span><br><span class="line">            StringUtils.isNotBlank(p.getId()) &amp;&amp; p.getPrice() &gt; 0;</span><br><span class="line">    Function&lt;Product, Integer&gt; mapToPrice = (Product p) -&gt; p.getPrice() * p.getQuantity();</span><br><span class="line">    BinaryOperator&lt;Integer&gt; reduceCheckoutAmount = </span><br><span class="line">            (Integer price0, Integer price1) -&gt; price0 + price1;</span><br><span class="line">    /**</span><br><span class="line">     * stream (for Collections) 1. filter, 2. map, 3. reduce.</span><br><span class="line">     * fork join pool with concurrent processing</span><br><span class="line">     */</span><br><span class="line">    return shoppingCart.getProducts().stream().parallel()</span><br><span class="line">            .filter(filterCondition).map(mapToPrice).reduce(reduceCheckoutAmount);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Here we have 3 examples for Predicate, Function, BinaryOperator functional interfaces respectively. They are all functional interfaces, so we can represent the method body as the lambda expression.<br><em>Predicate</em> is a functional interface which has a single method of return type boolean. The method implementation <em>StringUtils.isNotBlank(p.getId()) &amp;&amp; p.getPrice() &gt; 0</em> will be either true or false. By the way, the <em>return</em> key word can be omitted for the lambda expression approach.<br><em>Function</em> is a functional interface which has a single method of one type input, the different type of output. <em>(Product p) -&gt; p.getPrice() * p.getQuantity();</em>, input is Product, but output is String which is different from the input type.<br><em>BinaryOperator</em> is a functional interface which has a single method of two inputs and one output with the same type. It is similar to the <em>reduce</em> of the map-reduce concept, generally for accumulation. <em>(Integer price0, Integer price1) -&gt; price0 + price1;</em>, two integers as the input, the output is an integer of the sum of the two input integers.</p>
+<p>d. <code>Stream API</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public default String printReceipt(ShoppingCart shoppingCart) &#123;</span><br><span class="line">    StringBuilder receipt = new StringBuilder();</span><br><span class="line">    SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy-MM-dd hh:mm:ss&quot;);</span><br><span class="line">    for(Category category : Category.values()) &#123;</span><br><span class="line">        receipt.append(&quot;$$$$$$$$$&quot;).append(category.name()).append(&quot;$$$$$$$$$&quot;).append(&quot;\n&quot;);</span><br><span class="line">        shoppingCart.getProducts().stream()</span><br><span class="line">                .filter((Product p) -&gt; p.getCategory() == category).sorted((Product o1, Product o2)  </span><br><span class="line">                    -&gt; o1.getId().equals(o2.getId()) ? 0 : (o1.getPrice() &gt; o2.getPrice() ? 1 : -1))</span><br><span class="line">                .forEach((Product p) -&gt; receipt.append(p.getId()).append(&quot;  &quot;).append(p.getName())</span><br><span class="line">                    .append(&quot;  &quot;).append(&quot;X&quot;).append(p.getQuantity()).append(&quot;  &quot;).append(&quot;SGD&quot;)</span><br><span class="line">                    .append(p.getPrice()).append(&quot;\n&quot;));</span><br><span class="line">    &#125;</span><br><span class="line">    receipt.append(&quot;^^^^^^^^^^^^^^^^^^^^&quot;).append(&quot;\n&quot;);</span><br><span class="line">    receipt.append(&quot;Checkout Total Amount: &quot;).append(calculateTotalAmount(shoppingCart).get())</span><br><span class="line">            .append(&quot; SGD&quot;).append(&quot;\n&quot;);</span><br><span class="line">    receipt.append(&quot;Transaction Time: &quot;).append(sdf.format(new Date())).append(&quot;\n&quot;);</span><br><span class="line">    return receipt.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>For collections, <em>Stream API</em> allows to iterate each item of the collection, and enqueue each item within the pipeline to process, such as filter, for-each, map-reduce.<br><em>shoppingCart.getProducts().stream()</em>, it iterates the list of Product as the stream pipeline, moreover, <em>parallel()</em> will take use of the fork join pool for concurrent processing, then calls the corresponding stream API (the functional interfaces play the role like the anonymous inner class, but they are different in their underline behaviours), filter which input is a Predicate, (see the code in section c) map which input is a Function, reduce which input is a BinaryOperator, and so forth.</p>
+<p>e. <code>Default Method</code><br>The code snippet in section c and section d has the method with the <em>default</em> key word. Before Java 8 release, in the interface, we can just define the abstract methods as the contract, and the class which implements the interface has the concrete implementation of the interface method.<br>Java 8 introduces the default method in the interface class for the default implementation.</p>
+<p>f. <code>Effective Final</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public void checkout() &#123;</span><br><span class="line">    System.out.println(&quot;---------Checkout with Cash---------&quot;);</span><br><span class="line">    int cash = 10;</span><br><span class="line">    Payment cashPay = (ShoppingCart shoppingCart, Predicate&lt;Integer&gt; isReceiptRequired) -&gt; &#123;</span><br><span class="line">        /**</span><br><span class="line">         * cannot change, effective final;</span><br><span class="line">         * local variable for lambda expression, auto change to final variable.</span><br><span class="line">         * </span><br><span class="line">         * cash = 2000;</span><br><span class="line">         */</span><br><span class="line">        System.out.println(&quot;Cash is NOT support&quot;);</span><br><span class="line">    &#125;;</span><br><span class="line">    cashPay.pay(getShoppingCart(), (Integer amount) -&gt; false);</span><br><span class="line">    System.out.println();</span><br><span class="line">    System.out.println(&quot;---------Checkout with Cashlessa 8---------&quot;);</span><br><span class="line">    payment.pay(getShoppingCart(), this::isAskingReceipt);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Local variable for lambda expression, it will be automatically changed to final variable.<br>In this example, the local variable int cash cannot be modified within the lambda expression (cash = 2000) as it is changed to the final variable automatically. Otherwise, there will be compile error in line 9 (code snippet in section f).</p>
+<p>g. <code>Method Reference</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public void checkout() &#123;</span><br><span class="line">    ...</span><br><span class="line">    /**</span><br><span class="line">     * method reference</span><br><span class="line">     */</span><br><span class="line">    payment.pay(getShoppingCart(), this::isAskingReceipt);</span><br><span class="line">&#125;</span><br><span class="line">private boolean isAskingReceipt(Integer amount) &#123;</span><br><span class="line">    return amount &gt; 10;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>In java 8, we can use the syntax <em>::</em> to refer a method body.<br>In this example, the second input of the pay method is a Predicate. Here we use the method reference to indicate the method body which is the implemetation of the Predicate.</p>
+<p>In summary, Java 8 provides us some flexible ways to return the complex logic within one line, and more significant, it introduces the concept of Functional Interface for the functional programming pattern.</p>
+<p>The code snippets above are under the package <em>com.snippet.java8.feature</em> of the Snippets repository in <a href="https://github.com/xljiadahao/Snippets.git" target="_blank" rel="noopener">GitHub</a>. Feel free to create any GitHub issues against the repository if you have any questions or you want to correct the code snippet errors based on your understanding. Welcome.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/14/Hello-Hexo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xu Lei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/7018287">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xu Lei's Techblog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/14/Hello-Hexo/" itemprop="url">Hello 你好 Hexo</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-14T17:42:03+08:00">
+                2018-01-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/blog/" itemprop="url" rel="index">
+                    <span itemprop="name">blog</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>使用Hexo搭建博客，很赞哦！</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/13/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xu Lei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/7018287">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xu Lei's Techblog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/13/hello-world/" itemprop="url">Hello World</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-13T01:52:03+08:00">
+                2018-01-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://avatars2.githubusercontent.com/u/7018287"
+                alt="Xu Lei" />
+            
+              <p class="site-author-name" itemprop="name">Xu Lei</p>
+              <p class="site-description motion-element" itemprop="description">Internet|Software|Banking|Security, Java Latest Features, Spring Suite, Cryptography, Payments...</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xu Lei</span>
+
+  
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数: <span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+<span class="post-meta-divider">|</span>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://github.com/xljiadahao">Xu Lei GitHub</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

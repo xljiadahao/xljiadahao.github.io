@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="java,github," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="I would like to introduce the Java 8 features in a systematic way. Basically, Java 8 introduces the following new features. 1. functional interface, 2. lambda expression, 3. 6 types of pre-defined fun">
+<meta name="keywords" content="java,github">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java 8 Features">
+<meta property="og:url" content="http://yoursite.com/2018/02/04/Java-8-Features/index.html">
+<meta property="og:site_name" content="Xu Lei&#39;s Techblog">
+<meta property="og:description" content="I would like to introduce the Java 8 features in a systematic way. Basically, Java 8 introduces the following new features. 1. functional interface, 2. lambda expression, 3. 6 types of pre-defined fun">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-02-04T15:52:04.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java 8 Features">
+<meta name="twitter:description" content="I would like to introduce the Java 8 features in a systematic way. Basically, Java 8 introduces the following new features. 1. functional interface, 2. lambda expression, 3. 6 types of pre-defined fun">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/02/04/Java-8-Features/"/>
+
+
+
+
+
+  <title>Java 8 Features | Xu Lei's Techblog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/xljiadahao/Snippets.git"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Xu Lei's Techblog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">徐磊的技术博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-payment">
+          <a href="/payment" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-paypal"></i> <br />
+            
+            支付Payment
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/04/Java-8-Features/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xu Lei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/7018287">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xu Lei's Techblog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Java 8 Features</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-04T00:00:00+08:00">
+                2018-02-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>I would like to introduce the Java 8 features in a systematic way. Basically, Java 8 introduces the following new features. 1. functional interface, 2. lambda expression, 3. 6 types of pre-defined functional interface in Java 8, 4. stream API, 5. default method, 6. effective final, 7. method reference.</p>
+<p>a. <code>Functional Interface</code><br>Functional Interface is a single abstract method interface.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@FunctionalInterface</span><br><span class="line">public interface Payment &#123;</span><br><span class="line">    public void pay(ShoppingCart shoppingCart, </span><br><span class="line">    		Predicate&lt;Integer&gt; isReceiptRequired);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>The annotation <em>FunctionalInterface</em> checks against the class to comply with the rule of functional interface that it is a single abstract method interface. If we introduce another abstract method in the class, there will be compile error.</p>
+<p>b. <code>Lambda Expression</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public void checkout() &#123;</span><br><span class="line">    Payment cashPay = (ShoppingCart shoppingCart, </span><br><span class="line">			Predicate&lt;Integer&gt; isReceiptRequired) -&gt; &#123;</span><br><span class="line">        System.out.println(&quot;Cash is NOT support&quot;);</span><br><span class="line">    &#125;;</span><br><span class="line">    cashPay.pay(getShoppingCart(), (Integer amount) -&gt; false);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Lambda Expression can be only used for Functional Interface. It uses the syntax <em>-&gt;</em> to indicate the method body of the single abstract method interface. The left side of <em>-&gt;</em> is the method parameters, and the right side of <em>-&gt;</em> is the method implementation.</p>
+<p>c. <code>6 Types of Functional Interface in Java 8</code><br>They are all under the package <em>java.util.function</em>.<br>A. <em>Predicate, (I) -&gt; boolean, replace if else</em><br>B. <em>Function, (I) -&gt; R, transformer, one type to another type</em><br>C. <em>Consumer, (I) -&gt; void, consumer the input data</em><br>D. <em>Supplier, () -&gt; new (), factory pattern</em><br>E. <em>BinaryOperator, (I, I) -&gt; I, reducers, accumulation</em><br>F. <em>UnaryOperator, (I) -&gt; I</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public default Optional&lt;Integer&gt; calculateTotalAmount(ShoppingCart shoppingCart) &#123;</span><br><span class="line">    Predicate&lt;Product&gt; filterCondition = (Product p) -&gt; </span><br><span class="line">            StringUtils.isNotBlank(p.getId()) &amp;&amp; p.getPrice() &gt; 0;</span><br><span class="line">    Function&lt;Product, Integer&gt; mapToPrice = (Product p) -&gt; p.getPrice() * p.getQuantity();</span><br><span class="line">    BinaryOperator&lt;Integer&gt; reduceCheckoutAmount = </span><br><span class="line">            (Integer price0, Integer price1) -&gt; price0 + price1;</span><br><span class="line">    /**</span><br><span class="line">     * stream (for Collections) 1. filter, 2. map, 3. reduce.</span><br><span class="line">     * fork join pool with concurrent processing</span><br><span class="line">     */</span><br><span class="line">    return shoppingCart.getProducts().stream().parallel()</span><br><span class="line">            .filter(filterCondition).map(mapToPrice).reduce(reduceCheckoutAmount);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Here we have 3 examples for Predicate, Function, BinaryOperator functional interfaces respectively. They are all functional interfaces, so we can represent the method body as the lambda expression.<br><em>Predicate</em> is a functional interface which has a single method of return type boolean. The method implementation <em>StringUtils.isNotBlank(p.getId()) &amp;&amp; p.getPrice() &gt; 0</em> will be either true or false. By the way, the <em>return</em> key word can be omitted for the lambda expression approach.<br><em>Function</em> is a functional interface which has a single method of one type input, the different type of output. <em>(Product p) -&gt; p.getPrice() * p.getQuantity();</em>, input is Product, but output is String which is different from the input type.<br><em>BinaryOperator</em> is a functional interface which has a single method of two inputs and one output with the same type. It is similar to the <em>reduce</em> of the map-reduce concept, generally for accumulation. <em>(Integer price0, Integer price1) -&gt; price0 + price1;</em>, two integers as the input, the output is an integer of the sum of the two input integers.</p>
+<p>d. <code>Stream API</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public default String printReceipt(ShoppingCart shoppingCart) &#123;</span><br><span class="line">    StringBuilder receipt = new StringBuilder();</span><br><span class="line">    SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy-MM-dd hh:mm:ss&quot;);</span><br><span class="line">    for(Category category : Category.values()) &#123;</span><br><span class="line">        receipt.append(&quot;$$$$$$$$$&quot;).append(category.name()).append(&quot;$$$$$$$$$&quot;).append(&quot;\n&quot;);</span><br><span class="line">        shoppingCart.getProducts().stream()</span><br><span class="line">                .filter((Product p) -&gt; p.getCategory() == category).sorted((Product o1, Product o2)  </span><br><span class="line">                    -&gt; o1.getId().equals(o2.getId()) ? 0 : (o1.getPrice() &gt; o2.getPrice() ? 1 : -1))</span><br><span class="line">                .forEach((Product p) -&gt; receipt.append(p.getId()).append(&quot;  &quot;).append(p.getName())</span><br><span class="line">                    .append(&quot;  &quot;).append(&quot;X&quot;).append(p.getQuantity()).append(&quot;  &quot;).append(&quot;SGD&quot;)</span><br><span class="line">                    .append(p.getPrice()).append(&quot;\n&quot;));</span><br><span class="line">    &#125;</span><br><span class="line">    receipt.append(&quot;^^^^^^^^^^^^^^^^^^^^&quot;).append(&quot;\n&quot;);</span><br><span class="line">    receipt.append(&quot;Checkout Total Amount: &quot;).append(calculateTotalAmount(shoppingCart).get())</span><br><span class="line">            .append(&quot; SGD&quot;).append(&quot;\n&quot;);</span><br><span class="line">    receipt.append(&quot;Transaction Time: &quot;).append(sdf.format(new Date())).append(&quot;\n&quot;);</span><br><span class="line">    return receipt.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>For collections, <em>Stream API</em> allows to iterate each item of the collection, and enqueue each item within the pipeline to process, such as filter, for-each, map-reduce.<br><em>shoppingCart.getProducts().stream()</em>, it iterates the list of Product as the stream pipeline, moreover, <em>parallel()</em> will take use of the fork join pool for concurrent processing, then calls the corresponding stream API (the functional interfaces play the role like the anonymous inner class, but they are different in their underline behaviours), filter which input is a Predicate, (see the code in section c) map which input is a Function, reduce which input is a BinaryOperator, and so forth.</p>
+<p>e. <code>Default Method</code><br>The code snippet in section c and section d has the method with the <em>default</em> key word. Before Java 8 release, in the interface, we can just define the abstract methods as the contract, and the class which implements the interface has the concrete implementation of the interface method.<br>Java 8 introduces the default method in the interface class for the default implementation.</p>
+<p>f. <code>Effective Final</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public void checkout() &#123;</span><br><span class="line">    System.out.println(&quot;---------Checkout with Cash---------&quot;);</span><br><span class="line">    int cash = 10;</span><br><span class="line">    Payment cashPay = (ShoppingCart shoppingCart, Predicate&lt;Integer&gt; isReceiptRequired) -&gt; &#123;</span><br><span class="line">        /**</span><br><span class="line">         * cannot change, effective final;</span><br><span class="line">         * local variable for lambda expression, auto change to final variable.</span><br><span class="line">         * </span><br><span class="line">         * cash = 2000;</span><br><span class="line">         */</span><br><span class="line">        System.out.println(&quot;Cash is NOT support&quot;);</span><br><span class="line">    &#125;;</span><br><span class="line">    cashPay.pay(getShoppingCart(), (Integer amount) -&gt; false);</span><br><span class="line">    System.out.println();</span><br><span class="line">    System.out.println(&quot;---------Checkout with Cashlessa 8---------&quot;);</span><br><span class="line">    payment.pay(getShoppingCart(), this::isAskingReceipt);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Local variable for lambda expression, it will be automatically changed to final variable.<br>In this example, the local variable int cash cannot be modified within the lambda expression (cash = 2000) as it is changed to the final variable automatically. Otherwise, there will be compile error in line 9 (code snippet in section f).</p>
+<p>g. <code>Method Reference</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public void checkout() &#123;</span><br><span class="line">    ...</span><br><span class="line">    /**</span><br><span class="line">     * method reference</span><br><span class="line">     */</span><br><span class="line">    payment.pay(getShoppingCart(), this::isAskingReceipt);</span><br><span class="line">&#125;</span><br><span class="line">private boolean isAskingReceipt(Integer amount) &#123;</span><br><span class="line">    return amount &gt; 10;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>In java 8, we can use the syntax <em>::</em> to refer a method body.<br>In this example, the second input of the pay method is a Predicate. Here we use the method reference to indicate the method body which is the implemetation of the Predicate.</p>
+<p>In summary, Java 8 provides us some flexible ways to return the complex logic within one line, and more significant, it introduces the concept of Functional Interface for the functional programming pattern.</p>
+<p>The code snippets above are under the package <em>com.snippet.java8.feature</em> of the Snippets repository in <a href="https://github.com/xljiadahao/Snippets.git" target="_blank" rel="noopener">GitHub</a>. Feel free to create any GitHub issues against the repository if you have any questions or you want to correct the code snippet errors based on your understanding. Welcome.</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+            <a href="/tags/github/" rel="tag"># github</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/14/Hello-Hexo/" rel="next" title="Hello 你好 Hexo">
+                <i class="fa fa-chevron-left"></i> Hello 你好 Hexo
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/12/Json-Web-Token-JWT/" rel="prev" title="Json Web Token (JWT)">
+                Json Web Token (JWT) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://avatars2.githubusercontent.com/u/7018287"
+                alt="Xu Lei" />
+            
+              <p class="site-author-name" itemprop="name">Xu Lei</p>
+              <p class="site-description motion-element" itemprop="description">Internet|Software|Banking|Security, Java Latest Features, Spring Suite, Cryptography, Payments...</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xu Lei</span>
+
+  
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数: <span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+<span class="post-meta-divider">|</span>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://github.com/xljiadahao">Xu Lei GitHub</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
